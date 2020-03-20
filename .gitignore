@@ -1,0 +1,13 @@
+# ignore the work_dirs folder
+work_dirs/
+data/
+results/
+start_train.sh.*
+build/
+mmdet.egg-info/
+.eggs/
+.isort.cfg
+.style.yapf
+.pre-commit-config.yaml
+.travis.yml
+# ignore all the ABCI submission files
