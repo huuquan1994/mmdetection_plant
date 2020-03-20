@@ -20,7 +20,7 @@ data_soure = '/data/quan/tomato_classification/Tomato_test_smaller'
 save_result = '/data/quan/tomato_classification/result_Joe'
 
 images = [os.path.join(data_soure, x) for x in os.listdir(data_soure)]
-np.random.shuffle(images)
+# np.random.shuffle(images)
 ## Load configuration and trained model
 config_name = 'tomato_faster_rcnn_x101_64x4d_fpn_1x'
 config_file = 'configs/' + config_name + '.py'
@@ -33,7 +33,7 @@ else:
 model = init_detector(config_file, checkpoint_file, device='cuda')
 
 ## Test the model
-for file_path in tqdm(images[:100]):
+for file_path in tqdm(images[:200]):
 	result = inference_detector(model, file_path)
 	_, img_name = os.path.split(file_path)
 
